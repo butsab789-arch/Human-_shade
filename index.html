@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Shade</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    background:black;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+
+/* Animated Stars */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation:moveStars 100s linear infinite;
+    z-index:-1;
+}
+@keyframes moveStars{
+    from{background-position:0 0;}
+    to{background-position:10000px 5000px;}
+}
+
+/* Logo */
+.logo{
+    position:fixed;
+    top:20px;
+    left:30px;
+    width:120px;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.planet{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, #6a00ff, #000);
+    box-shadow:0 0 80px #6a00ff;
+    animation:float 6s ease-in-out infinite;
+}
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+}
+
+h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:3.5rem;
+    margin-top:20px;
+    letter-spacing:6px;
+}
+
+.tagline{
+    opacity:0.7;
+    margin-top:10px;
+}
+
+.btn{
+    margin-top:30px;
+    padding:12px 40px;
+    border:1px solid #6a00ff;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    transition:0.4s;
+}
+.btn:hover{
+    background:#6a00ff;
+}
+
+/* Products */
+.products{
+    padding:100px 10%;
+    text-align:center;
+}
+.products h2{
+    margin-bottom:50px;
+    font-size:2rem;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:20px;
+    border-radius:15px;
+    transition:0.4s;
+}
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px #6a00ff;
+}
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:40px;
+    opacity:0.6;
+    font-size:0.9rem;
+}
+
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<img src="logo.png" class="logo">
+
+<audio id="bgMusic" loop>
+    <source src="nebula.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+    <div class="planet"></div>
+    <h1>HUMAN SHADE</h1>
+    <p class="tagline">Own Your Shade. Define Your Power.</p>
+    <button class="btn" onclick="playMusic()">Enter Universe</button>
+</section>
+
+<section class="products">
+    <h2>Streetwear Collection</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="product1.jpg">
+            <h3>Luxury Zip Hoodie</h3>
+            <p>Baggy + Slim Fit Mode</p>
+        </div>
+        <div class="card">
+            <img src="product2.jpg">
+            <h3>Mesh Premium Tee</h3>
+            <p>Breathable Street Fit</p>
+        </div>
+        <div class="card">
+            <img src="product3.jpg">
+            <h3>Dark Sport Set</h3>
+            <p>Performance + Style</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+© 2026 Human Shade — All Rights Reserved
+</footer>
+
+<script>
+function playMusic(){
+    document.getElementById("bgMusic").play();
+}
+</script>
+
+</body>
+</html>
